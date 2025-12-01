@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação do Agendamento</title>
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="confirmacao.css">
+
+    <!-- CSS DA TELA (EMBUTIDO PARA FUNCIONAR AGORA) -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            background: linear-gradient(135deg, #ffe6f0 0%, #ffffff 100%);
+        }
+
+        .container-confirmacao {
+            max-width: 480px;
+            margin: 70px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 22px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            text-align: center;
+            animation: fadeIn .6s ease;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #C2185B;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
+        }
+
+        .box-info {
+            background: #fff3f8;
+            border-left: 6px solid #C2185B;
+            padding: 22px;
+            border-radius: 14px;
+            margin-bottom: 35px;
+            font-size: 18px;
+            color: #444;
+            text-align: left;
+            line-height: 1.6;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .btn {
+            display: block;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 14px;
+            font-size: 19px;
+            font-weight: 600;
+            transition: transform .15s ease, background .15s ease;
+            cursor: pointer;
+        }
+
+        .confirmar {
+            background: #C2185B;
+            color: #fff;
+            box-shadow: 0 8px 18px rgba(194, 24, 91, .3);
+        }
+        .confirmar:hover {
+            background: #a01048;
+            transform: scale(1.03);
+        }
+
+        .desmarcar {
+            background: #ffe6ef;
+            color: #C2185B;
+            border: 1px solid #f8c3d4;
+        }
+        .desmarcar:hover {
+            background: #ffd6e7;
+            transform: scale(1.03);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container-confirmacao">
+
+    <h1 class="title">Confirmação do Agendamento</h1>
+
+    <div class="box-info">
+        <p><strong>Serviço:</strong><?php echo $_GET['servico'];?></p>
+        <p><strong>Data:</strong><?php echo $_GET['data'];?></p>
+        <p><strong>Horário:</strong><?php echo $_GET['horario'];?></p>
+    </div>
+
+    <div class="buttons">
+        <a href="finalizar.php?servico=<?php echo $_GET['servico']; ?>&data=<?php echo $_GET['data']; ?>&horario=<?php echo $_GET['horario']; ?>" class="btn confirmar">Confirmar</a>
+
+        <a href="desmarcar.php?servico=<?php echo $_GET['servico']; ?>&data=<?php echo $_GET['data']; ?>&horario=<?php echo $_GET['horario']; ?>" class="btn desmarcar">Desmarcar</a>
+    </div>
+
+</div>
+
+</body>
+</html>

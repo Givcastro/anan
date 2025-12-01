@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ana Nails - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="home.html" class="logo-link">💅 ANA<br>NAILS</a>
+    </div>
+
+    <div class="menu">
+      <a href="central.html" class="menu-item">❓ CENTRAL DE ATENDIMENTO</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="cadastro-container">
+      <h1>Login</h1>
+      <p>Entre para acessar sua conta e agendar seus horários 💅</p>
+
+      <!-- 🔥 CORRIGIDO: AGORA O LOGIN VAI PARA login_cliente.php -->
+      <form action="login_cliente.php" method="POST">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" placeholder="Sua senha" required>
+
+        <button type="submit" class="btn-cadastrar">ENTRAR</button>
+      </form>
+
+      <p class="link-extra">Ainda não tem conta? 
+        <a href="cadastro_cliente.html">Cadastre-se aqui</a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>

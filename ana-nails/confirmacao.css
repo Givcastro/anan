@@ -1,0 +1,66 @@
+body {
+    background: #f8f3f7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container-confirmacao {
+    max-width: 450px;
+    margin: 80px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.title {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #c2185b;
+    font-weight: bold;
+}
+
+.box-info {
+    background: #fff4fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: #444;
+    line-height: 32px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px;
+    margin: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.confirmar {
+    background: #4CAF50;
+}
+
+.confirmar:hover {
+    background: #3f9143;
+}
+
+.desmarcar {
+    background: #d9534f;
+}
+
+.desmarcar:hover {
+    background: #b94642;
+}

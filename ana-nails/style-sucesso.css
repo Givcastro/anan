@@ -1,0 +1,52 @@
+/* Fundo geral */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #fce4ec; /* rosa clarinho igual Ana Nails */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Caixa central */
+.container-msg {
+    background: white;
+    width: 90%;
+    max-width: 420px;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Título */
+.container-msg h1 {
+    font-size: 26px;
+    color: #d81b60; /* rosa Ana Nails */
+    margin-bottom: 20px;
+}
+
+/* Texto */
+.container-msg p {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* Botão */
+.btn-voltar {
+    display: inline-block;
+    background: #d81b60;
+    color: white;
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover {
+    background: #ad144c;
+}

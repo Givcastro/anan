@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento - Ana Nails</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: #fafafa;
+      color: #333;
+    }
+
+    /* CABEÇALHO */
+    header {
+      background: #ff4fa3;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .logo-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    /* TÍTULOS */
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 28px;
+      font-weight: 600;
+      color: #ff4fa3;
+    }
+
+    .subtitulo {
+      text-align: center;
+      color: #666;
+      margin-bottom: 40px;
+      font-size: 15px;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 600px;
+      background: white;
+      margin: auto;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 13px;
+      font-size: 15px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      margin-bottom: 25px;
+      transition: 0.2s;
+    }
+
+    input:focus, select:focus {
+      border-color: #ff4fa3;
+      outline: none;
+      box-shadow: 0 0 6px rgba(255,79,163,0.4);
+    }
+
+    /* HORÁRIOS */
+    .horarios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .hora {
+      padding: 12px;
+      background: #fff;
+      text-align: center;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      cursor: pointer;
+      transition: 0.25s;
+      font-weight: 500;
+    }
+
+    .hora:hover {
+      border-color: #ff4fa3;
+      box-shadow: 0 3px 12px rgba(255,79,163,0.2);
+    }
+
+    .hora.selecionado {
+      background: #ff4fa3;
+      color: white;
+      font-weight: 600;
+      border-color: #ff4fa3;
+      box-shadow: 0 4px 15px rgba(255,79,163,0.3);
+    }
+
+    .btn-confirmar {
+      width: 100%;
+      padding: 16px;
+      background: #ff4fa3;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .btn-confirmar:hover {
+      background: #d93b87;
+      transform: scale(1.02);
+    }
+
+    .btn-voltar {
+      display: block;
+      width: fit-content;
+      margin: 25px auto 40px;
+      padding: 12px 28px;
+      background: #ff4fa3;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+
+    .btn-voltar:hover {
+      background: #d93b87;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+      background: #ffe0f0;
+      color: #555;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="home.html" class="logo-link">💅 ANA<br>NAILS</a>
+  <div class="menu">
+    <a href="central.html">Central de Atendimento</a>
+  </div>
+</header>
+
+<h1>Agendar Horário</h1>
+<p class="subtitulo">Escolha o dia e o horário para concluir seu agendamento</p>
+
+<main>
+  <div class="container">
+
+    <!-- Exibe o serviço vindo da página anterior -->
+    <h3 id="servicoTitulo" style="color:#ff4fa3; margin-bottom:20px;"></h3>
+
+   <form action="confirmacao.php" method="POST">
+
+
+      <input type="hidden" id="inputServico" name="servico">
+
+      <label for="data">Selecione a data:</label>
+      <input type="date" name="data" id="data" required>
+
+      <label>Selecione o horário:</label>
+      <div class="horarios-grid" id="horarios">
+        <!-- horários serão gerados automaticamente -->
+      </div>
+
+      <input type="hidden" name="hora" id="horaSelecionada">
+
+      <button type="submit" class="btn-confirmar">Confirmar Agendamento</button>
+    </form>
+
+  </div>
+
+  <a href="telaservicos.html" class="btn-voltar">← Voltar aos Serviços</a>
+</main>
+
+<footer>
+  © 2025 Ana Nails — Beleza com excelência
+</footer>
+
+<script>
+  /* PEGA O SERVIÇO DA URL */
+  const params = new URLSearchParams(window.location.search);
+  const servico = params.get("servico");
+
+  document.getElementById("servicoTitulo").innerText = "Serviço escolhido: " + servico;
+  document.getElementById("inputServico").value = servico;
+
+  /* GERA HORÁRIOS AUTOMATICAMENTE */
+  const horarios = [
+    "09:00","09:30","10:00","10:30",
+    "11:00","11:30","13:00","13:30",
+    "14:00","14:30","15:00","15:30",
+    "16:00","16:30"
+  ];
+
+  const divHorarios = document.getElementById("horarios");
+
+  horarios.forEach(h => {
+    const botão = document.createElement("div");
+    botão.className = "hora";
+    botão.innerText = h;
+
+    botão.onclick = () => {
+      document.querySelectorAll(".hora").forEach(btn => btn.classList.remove("selecionado"));
+      botão.classList.add("selecionado");
+      document.getElementById("horaSelecionada").value = h;
+    };
+
+    divHorarios.appendChild(botão);
+  });
+</script>
+
+</body>
+</html>

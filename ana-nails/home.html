@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ana Nails - Início</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #ff4fa5;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo a {
+      text-decoration: none;
+      font-size: 26px;
+      font-weight: 700;
+      color: white;
+      line-height: 1.1;
+    }
+
+    .menu {
+      position: relative; /* necessário para alinhar o menu abaixo */
+    }
+
+    .menu a {
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      transition: 0.2s;
+    }
+
+    .menu a:hover {
+      opacity: 0.8;
+    }
+
+    /* MENU COM ANIMAÇÃO */
+    .menu-opcoes {
+      background: white;
+      position: absolute;
+      top: 38px;
+      right: 0;
+      padding: 12px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      width: 180px;
+
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .menu-opcoes.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .menu-opcoes a {
+      color: #ff4fa5;
+      display: block;
+      margin: 6px 0;
+      text-decoration: none;
+    }
+
+    .menu-opcoes a:hover {
+      opacity: 0.7;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 10%;
+      gap: 60px;
+    }
+
+    .hero-text h1 {
+      font-size: 42px;
+      font-weight: 700;
+      color: #ff4fa5;
+      margin-bottom: 10px;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #555;
+    }
+
+    .box {
+      background: #fff1fa;
+      padding: 25px;
+      border-radius: 18px;
+      margin-top: 25px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    }
+
+    .btn-rosa {
+      background-color: #ff4fa5;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 10px;
+      transition: 0.2s;
+    }
+
+    .btn-rosa:hover {
+      background-color: #e83a90;
+    }
+
+    .hero img {
+      width: 420px;
+      border-radius: 20px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+    }
+
+    /* HORARIOS */
+    .horarios {
+      background: #fff1fa;
+      padding: 60px 10%;
+      display: flex;
+      justify-content: center;
+    }
+
+    footer {
+      background: #ff4fa5;
+      padding: 25px;
+      text-align: center;
+      color: white;
+      margin-top: 40px;
+    }
+
+    .redes a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="home.html">💅 ANA<br>NAILS</a>
+    </div>
+
+    <nav class="menu">
+      <a href="central.html">❓ CENTRAL DE ATENDIMENTO</a>
+
+      <span id="abrirMenuLogin" style="cursor:pointer;color:white;font-weight:600;">
+        👤 OLÁ, BEM-VINDO(A)
+      </span>
+
+      <div id="menuOpcoes" class="menu-opcoes">
+        <a href="login_cliente.html">Login Cliente</a>
+        <a href="loginadm.php">Login Administrador</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Beleza, cuidado e perfeição em cada detalhe</h1>
+        <p>No Studio Ana Nails, você encontra serviços profissionais, ambiente acolhedor e resultados impecáveis.</p>
+        <p>Transforme seu momento de autocuidado em uma experiência única.</p>
+
+        <div class="box">
+          <h3>Serviços oferecidos</h3>
+          <ul>
+            <li>Manicure e pedicure tradicionais</li>
+            <li>Alongamento em gel e fibra</li>
+            <li>Nail art personalizada</li>
+            <li>Spa das mãos e dos pés</li>
+          </ul>
+          <a href="servicos.html" class="btn-rosa">Ver serviços</a>
+        </div>
+      </div>
+
+      <div class="hero-img">
+        <img src="unha.jpg" alt="Unhas decoradas profissionais">
+      </div>
+    </section>
+
+    <section class="horarios">
+      <div class="box" style="max-width: 600px; text-align:center;">
+        <h3>Agende seu horário</h3>
+        <p>Escolha seu serviço, selecione o horário ideal e confirme sua visita em poucos cliques.</p>
+        <p>Facilidade, rapidez e atendimento personalizado.</p>
+        <a href="login_cliente.html" class="btn-rosa">Agendar Agora</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Ana Nails — Cuidando de você com amor e precisão 💅</p>
+    <div class="redes">
+      <a href="https://www.instagram.com/ana.nails_s" target="_blank">📸 Instagram</a>
+      <a href="https://wa.me/55971315031?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20na%20Ana%20Nails." target="_blank">💬 WhatsApp</a>
+      <a href="https://maps.app.goo.gl/kdqRpNhuVYecCyZ17" target="_blank">📍 Localização</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("abrirMenuLogin").onclick = function () {
+      const menu = document.getElementById("menuOpcoes");
+      menu.classList.toggle("show");
+    };
+
+    /* Fecha ao clicar fora */
+    document.addEventListener("click", function (e) {
+      const botao = document.getElementById("abrirMenuLogin");
+      const menu = document.getElementById("menuOpcoes");
+
+      if (!botao.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove("show");
+      }
+    });
+  </script>
+
+</body>
+</html>

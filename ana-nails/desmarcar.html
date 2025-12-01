@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desmarcar Agendamento</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-confirmacao.css">
+</head>
+
+<body>
+
+<div class="container-confirmacao">
+
+    <h1 class="title">Desmarcar Agendamento</h1>
+
+    <div class="box-info">
+        <p><strong>Serviço:</strong> <?php echo $_GET['servico']; ?></p>
+        <p><strong>Data:</strong> <?php echo $_GET['data']; ?></p>
+        <p><strong>Horário:</strong> <?php echo $_GET['horario']; ?></p>
+    </div>
+
+    <div class="buttons">
+        <a href="index.html" class="btn voltar">Voltar</a>
+    </div>
+
+</div>
+
+</body>
+</html>
